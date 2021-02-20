@@ -1,0 +1,100 @@
+body {
+    min-width: 290px;
+    color: #4d4e53;
+    background-color: #ffffff;
+    font-family: 'Open Sans', Arial, sans-serif;
+    line-height: 1.5;
+}
+  
+#navbar {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    min-width: 300px;
+    width: 300px;
+    height: 100%;
+    border-right: solid;
+    z-index: 1;
+    padding: 75px 0px;
+}
+
+header {
+    color: black;
+    margin: 10px;
+    text-align: center;
+    font-size: 1.8em;
+    font-weight: thin;
+    text-align: left;
+}
+
+#navbar ul {
+    list-style: none;
+}
+
+#navbar li {
+    border-top: 1px solid;
+    position: relative;
+    width: 100%;
+}
+
+#navbar a {
+    text-decoration: none;
+}
+
+#main-doc {
+    position: absolute;
+    margin-left: 310px;
+    padding: 20px;
+    margin-bottom: 110px;
+}
+
+section article {
+    color: #4d4e53;
+    margin: 15px;
+    font-size: 0.96em;
+}
+
+article ul {
+    list-style: none;
+}
+
+article li {
+    display: inline-block;
+    border-radius: 5px;
+    padding: 5px 15px 5px 15px;
+    margin-bottom: 5px;
+    width: 80px;
+    text-align: center;
+    color: white;
+}
+
+.grass {
+    background-color: #9bcc50;
+}
+
+.poison {
+    background-color: #b97fc9;
+}
+
+.fire {
+    background-color: #fd7d24;
+}
+
+.psychic {
+    background-color: #f366b9;
+}
+
+.flying {
+    background: linear-gradient( 180deg, #3dc7ef 50%, #bdb9b8 50% );
+}
+
+.ice {
+    background-color: #51c4e7;
+}
+
+@media (max-width: 1240px) {
+    /* For mobile: */
+    #navbar {
+        
+    }
+}
