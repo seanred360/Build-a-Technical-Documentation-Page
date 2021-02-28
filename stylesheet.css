@@ -1,9 +1,8 @@
 body {
-    min-width: 290px;
     color: #4d4e53;
-    background-color: #ffffff;
+    background: #fff url("resources/body_white_bg.png");
     font-family: 'Open Sans', Arial, sans-serif;
-    line-height: 1.5;
+    font-size: 1rem;
 }
   
 #navbar {
@@ -16,56 +15,228 @@ body {
     border-right: solid;
     z-index: 1;
     padding: 75px 0px;
+    background-color: rgb(236, 17, 17);
+    color: white;
 }
-
-header {
-    color: black;
-    margin: 10px;
-    text-align: center;
-    font-size: 1.8em;
-    font-weight: thin;
-    text-align: left;
+#nav-header {
+    color: white;
 }
 
 #navbar ul {
     list-style: none;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 #navbar li {
-    border-top: 1px solid;
+    color: #f58888;
+    border-top: 5px solid;
+    border-radius: 6px;
     position: relative;
     width: 100%;
 }
 
 #navbar a {
+    color: white;
     text-decoration: none;
+}
+
+#navbar::after {
+    /* code from https://css-tricks.com/snippets/css/transparent-background-images/ 
+    This makes the background transparent so you can see the pokeball*/
+
+    content: "";
+    background-image: url("resources/pokeball.png");
+    background-repeat: no-repeat;
+    background-size: 300px;
+    background-position: 100px -100px;
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;   
+}
+
+#go-top {
+    position: fixed;
+    bottom: 0;
+    left:0;
+    right:0;
+    text-align: center;
+    z-index: 1;
+    background-color: rgb(236, 17, 17);
+}
+
+#go-top a {
+    color: white;
+    text-decoration: underline;
+}
+
+#myBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: red; /* Set a background color */
+    color: white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+    font-size: 18px; /* Increase font size */
+  }
+  
+  #myBtn:hover {
+    background-color: #555; /* Add a dark-grey background on hover */
+  }
+
+header {
+    color: black;
+    margin: 10px;
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: thin;
+    text-align: left;
 }
 
 #main-doc {
     position: absolute;
     margin-left: 310px;
-    padding: 20px;
-    margin-bottom: 110px;
+    background-color: white;
+    border-radius: 10px;
+    max-width: 1000px;
+
+    border-radius: 10px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: white;
 }
 
-section article {
-    color: #4d4e53;
-    margin: 15px;
-    font-size: 0.96em;
+.container {
+    padding-top: 60px;
 }
 
-article ul {
-    list-style: none;
+.column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+    row-gap: 20px;
 }
 
-article li {
+.pokemon-img {
+    width: 100%;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+}
+
+.types-weaknesses ul {
+    padding-left: 0;
+}
+
+.types-weaknesses li {
     display: inline-block;
     border-radius: 5px;
-    padding: 5px 15px 5px 15px;
-    margin-bottom: 5px;
     width: 80px;
     text-align: center;
     color: white;
+    font-size: 20px;
+}
+
+.moveset-container {
+    background: orange;
+    border-radius: 10px;
+}
+
+.moveset-title {
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.moveset-list {
+    list-style:circle;
+    text-align: left;
+    color: white;
+}
+
+.evolutions-title,
+.moveset-title {
+    font-size: 1.5rem;
+    margin-left: 20px;
+    color:white;
+}
+
+.attributes {
+    background-color: #3dc7ef;
+    border-radius: 10px;
+}
+
+.column-attributes {
+    display: inline-block;
+}
+
+.attributes li {
+    list-style: none;
+}
+
+.attribute-name {
+    color:white;
+}
+
+.attribute-value {
+    color: black;
+}
+
+.evolution-container {
+    background-image: url("resources/body_gray_bg.png");
+    border-radius: 10px;
+}
+
+.column-evolution {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    text-align: center;
+}
+
+.row-evolution {
+    display: block;
+}
+
+.row-evolution ul {
+    list-style: none;
+    display: inline-block;
+    width: 80px;
+    color: white;
+    padding-left:0;
+}
+
+.row-evolution li {
+    border-radius: 5px;
+}
+
+.evolution-img {
+    box-shadow: 0 4px 4px 0px #212121;
+    background-color: #616161;
+    border: 5px solid #fff;
+    border-radius: 50%;
+    width: 70%;
+}
+
+.evolution-name {
+    color:white;
+    margin-top: auto;
+}
+
+.evolution-types {
+    margin-top: auto;
+}
+
+.evolution-arrow {
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .grass {
@@ -92,9 +263,57 @@ article li {
     background-color: #51c4e7;
 }
 
+.water {
+    background-color: rgb(0, 81, 255);
+}
+
+.ground {
+    background: linear-gradient( 180deg, #e0cd1c 50%, #a17420 50% );
+}
+
+.rock {
+    background-color: #a17420;
+}
+
+.fighting {
+    background-color: #a73f16;
+}
+
+.bug {
+    background-color: #487900;
+}
+
+.electric {
+    background-color: #ffe600;
+}
+
 @media (max-width: 1240px) {
     /* For mobile: */
+
     #navbar {
-        
+        font-size: 1.5rem;
+        position: absolute;
+        padding: 0;
+        width: 100%;
+        max-height: 325px;
+    }
+
+    #navbar ul {
+        border: 1px solid;
+        height: 207px;
+    }
+
+    #main-doc {
+        position: relative;
+        margin-left: 0px;
+        margin-top: 325px;
+    }
+
+    .column {
+        display: block;
+    }
+
+    .row-evolution {
+        display: block;
     }
 }
